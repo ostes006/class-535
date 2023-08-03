@@ -1,0 +1,48 @@
+CREATE TABLE CUSTOMER (
+CustomerID int Primary Key, 
+Firstname varchar(100), 
+LastName varchar(100),
+Address varchar(100), 
+Phonenumber varchar(20)
+);
+
+CREATE TABLE TIMS_BID (
+BidOffer int Primary Key, 
+CustomerID int Foreign Key, 
+Startdate date, 
+Enddate date, 
+WorkOrder int Foreign Key
+);
+
+CREATE TABLE REPAIRS (
+WorkOrder int Primary key, 
+CustomerID int Foreign Key, 
+productcode varchar(50), 
+orderID int, 
+Productprice int Foreign Key
+);
+
+CREATE TABLE MATERIALS (
+ProductID int Primary key, 
+Productprice int Foreign Key, 
+VendorId int, 
+productsinstock int, 
+producttorestock int
+);
+
+CREATE TABLE VENDOR (
+VendorID int Primary key, 
+ProductID int, 
+productprice int, 
+contactinformation varchar(100), 
+paymentaccount int
+);
+
+CREATE TABLE BILLING (
+Paymentdate date primary key, 
+customer int, 
+vendor int, 
+checknum int, 
+amountdue int
+);
+
